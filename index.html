@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Validation Excercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form class="form" action="submit">
+            <h1>Form</h1>
+
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="sample@example.com" required>
+            </div>
+
+            <div class="input-control">
+                <label for="country">Country</label>
+                <select id="Country">
+                    <option value="us">United States</option>
+                    <option value="ch">Switzerland</option>
+                    <option value="fr">France</option>
+                    <option value="de">Germany</option>
+                    <option value="nl">The Netherlands</option>
+                  </select>
+            </div>
+
+            <div class="input-control">
+                <label for="zipcode">Zip Code</label>
+                <input type="number" name="zipcode" id="zipcode" placeholder="0000-0000" required>
+            </div>
+
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="input-control">
+                <label for="password2">Confirm Password</label>
+                <input type="password2" name="password2" id="password2" required>
+            </div>
+
+            <button>Submit</button>
+                  
+        </form>
+    </div>
+
+    <footer></footer>
+</body>
+
+</html>

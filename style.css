@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;
+    width: 25%;
+    background-color: lightgray;
+    padding:20px;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding:5px;
+}
+
+input, select {
+    height:30px;
+}
+
+/* input:invalid {
+    border: solid red;
+} */
+
+button {
+    width: calc(100% - 10px);
+    height: 40px;
+    margin-top: 10px;
+}
