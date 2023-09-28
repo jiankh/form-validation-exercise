@@ -30,9 +30,9 @@ input, select {
     height:30px;
 }
 
-/* input:invalid {
+input:invalid {
     border: solid red;
-} */
+}
 
 button {
     width: calc(100% - 10px);
