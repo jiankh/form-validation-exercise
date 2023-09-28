@@ -1,11 +1,36 @@
 
 
 const email = document.getElementById("email");
-const country = document.getElementById("country");
+let country = document.getElementById("country");
 const zipcode = document.getElementById("zipcode");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 const submit = document.getElementById("submit")
+
+// const allInputs = document.querySelectorAll("input")
+// allInputs.forEach((input) => {
+//     input.addEventListener("change", ()=>{
+//     })
+// })
+
+country.addEventListener("change", ()=> {
+    country = document.getElementById("country");
+})
+
+email.addEventListener("blur", () => {
+    checkEmail();
+})
+zipcode.addEventListener("blur", () => {
+    checkZIP();
+})
+password.addEventListener("blur", () => {
+    checkPasswordReq();
+})
+password2.addEventListener("blur", () => {
+    checkPasswordReq();
+    checkPasswordMatch()
+})
+
 
 function checkZIP() {
     // For each country, defines the pattern that the ZIP has to follow
@@ -40,7 +65,6 @@ function checkZIP() {
   
     // Build the constraint checker
     const constraint = new RegExp(constraints[country][0], "");
-    console.log(constraint);
   
     // Check it!
     if (constraint.test(ZIPField.value)) {
@@ -50,12 +74,14 @@ function checkZIP() {
       // The ZIP doesn't follow the constraint, we use the ConstraintAPI to
       // give a message about the format required for this country
       ZIPField.setCustomValidity(constraints[country][1]);
+      ZIPField.reportValidity();
     }
 }
 
 function checkEmail() {
     if (email.validity.typeMismatch) {
         email.setCustomValidity("Please enter a valid email address");
+        email.reportValidity();
     } else {
         email.setCustomValidity("");
     }
@@ -64,6 +90,7 @@ function checkEmail() {
 function checkPasswordReq() {
     if (!password.checkValidity()) {
         password.setCustomValidity(password.validationMessage())
+        password.reportValidity();
     }
 }
 
